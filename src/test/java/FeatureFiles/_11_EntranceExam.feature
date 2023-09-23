@@ -20,7 +20,7 @@ Feature: Exam functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | ism941Exam1 |
+      | nameInput | ism942220Exam1 |
 
     And Click on the element in Dialog
       | academicPeriod  |
@@ -44,7 +44,7 @@ Feature: Exam functionality
       | academicPeriod1      |
 
     And User delete the element from Dialog
-      | ism941Exam1 |
+      | ism942220Exam1 |
 
 
     Then Success message should be displayed

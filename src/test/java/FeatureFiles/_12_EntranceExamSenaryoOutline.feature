@@ -15,7 +15,7 @@ Feature: Exam functionality
     When Enter username and password and click login button
     Then User should login successfully
 
-  Scenario: Exam Create and Delete
+  Scenario Outline: Exam Create and Delete
     And Click on the element in LeftNav
       | entranceExamsOne |
       | setupTwo         |
@@ -25,13 +25,14 @@ Feature: Exam functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | ism941Exam1 |
+      | nameInput | <ExamName> |
+
 
     And Click on the element in Dialog
-      | academicPeriod  |
-      | academicPeriod1 |
-      | gradeLevel      |
-      | gradeLevel2     |
+      | academicPeriod         |
+      | <AcademicPeriodOption> |
+      | gradeLevel             |
+      | <GradeLevelOption>     |
 
     And Click on the element in Dialog
       | saveButton |
@@ -45,11 +46,18 @@ Feature: Exam functionality
       | entranceExamsTwo |
 
     And Click on the element in Dialog
-      | searchAcademicPeriod |
-      | academicPeriod1      |
+      | searchAcademicPeriod   |
+      | <AcademicPeriodOption> |
 
     And User delete the element from Dialog
-      | ism941Exam1 |
+      | <ExamName> |
 
 
     Then Success message should be displayed
+
+    Examples:
+      | ExamName          | AcademicPeriodOption | GradeLevelOption |
+      | Math exam is471   | academicPeriod1      | gradeLevel2      |
+      | IT exam is471     | academicPeriod1      | gradeLevel2      |
+      | Oracle exam is471 | academicPeriod1      | gradeLevel2      |
+      | Math exam is471   | academicPeriod1      | gradeLevel2     |

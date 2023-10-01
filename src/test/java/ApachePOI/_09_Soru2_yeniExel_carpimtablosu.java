@@ -16,7 +16,7 @@ import java.io.IOException;
  *  diğerlerini)
  */
 
-public class _09_Soru2 {
+public class _09_Soru2_yeniExel_carpimtablosu {
     public static void main(String[] args) throws IOException {
 
         //hafzada worbook oluştur, içinde hafızada sheet oluştur

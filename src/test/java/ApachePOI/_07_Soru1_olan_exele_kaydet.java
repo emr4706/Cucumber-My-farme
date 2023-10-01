@@ -14,7 +14,7 @@ import java.io.IOException;
  *  diğerlerini)
  */
 
-public class _07_Soru1 {
+public class _07_Soru1_olan_exele_kaydet {
     public static void main(String[] args) throws IOException {
 
 

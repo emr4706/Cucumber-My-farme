@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class _11_Soru {
+public class _11_Soru_exelden_sutun_okuyup_arraya_atmak {
     public static void main(String[] args) {
         String path="src/test/java/ApachePOI/resource/ApacheExcel2.xlsx";
         String sheetName="testCitizen";

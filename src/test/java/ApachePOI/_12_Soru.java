@@ -66,6 +66,7 @@ public class _12_Soru {
                 System.out.println("ex.getMessage() = " + ex.getMessage());
             }
 
+            //islem
             int sonSatirIndex = sheet.getPhysicalNumberOfRows();
             Row yeniSatir = sheet.createRow(sonSatirIndex);
             Cell yeniHucre = yeniSatir.createCell(0);

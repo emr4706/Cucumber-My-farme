@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Utilities.ExcelUtility;
 import Utilities.GWD;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -18,7 +19,10 @@ public class Hooks {
     @After // Cucumber ın Annotation ı
     public void after(Scenario senaryo)
     {
+        ExcelUtility.writeToExcel("src/test/java/ApachePOI/resource/SenaryoSonuclari3.xlsx",
+                senaryo);
 
+        // extent reportun plugini aktif iken açık kalsın
         if (senaryo.isFailed()){
             TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());
             byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);

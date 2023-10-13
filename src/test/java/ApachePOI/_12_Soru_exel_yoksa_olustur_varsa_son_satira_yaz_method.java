@@ -17,7 +17,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class _12_Soru {
+public class _12_Soru_exel_yoksa_olustur_varsa_son_satira_yaz_method {
     public static void main(String[] args) {
         String path = "src/test/java/ApachePOI/resource/SenaryoSonuclari2.xlsx";
         String bilgi = "test passed";

@@ -16,7 +16,7 @@ public class _01_Giris {
 //      1- bağlantı bilgilerini girdik : connection bilgileri set edildi.
         Connection baglanti = DriverManager.getConnection(HostUrl, username, password);
 
-//      2- db seçtik. : HostUrl ye bu bilgi(sakila) eklendi, ek kod yazılmadı
+//      2- db seçtik. : HostUrl ye bu bilgi eklendi, ek kod yazılmadı
 
 //      3- Sorgu ekranını açtık
         Statement sorguEkrani= baglanti.createStatement();

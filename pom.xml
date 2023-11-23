@@ -113,7 +113,8 @@
         </plugins>
     </build>
 
-<!--    Jenkins de neyi calistirmak istedigimizi belirmek icin -->
+<!--    Jenkins de neyi calistirmak istedigimizi belirmek icin  sonra jenkinste build steps icinde
+Invoke top-level Maven targets e seciyoruz goals kismina "clean test -P(profilden sec demek) Smoke_Yeni(profile id demek)"-->
     <profiles>
         <profile>
             <id>Smoke_Yeni</id>

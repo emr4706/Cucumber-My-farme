@@ -13,6 +13,6 @@ Feature: Country Multi Scenario
 
   @Regression
   Scenario: Create country 2
-    When Create a country name as "emr5588900" code as "emm88900990"
+    When Create a country name as "emr55889199" code as "emm889009909997"
     Then Success message should be displayed
 

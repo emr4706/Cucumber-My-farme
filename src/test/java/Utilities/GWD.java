@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -34,9 +35,21 @@ public class GWD {
                 case "safari":  threadDriver.set(new SafariDriver());  break; // ilgili threade bir driver set ettim
                 case "edge":    threadDriver.set(new EdgeDriver());    break; // ilgili threade bir driver set ettim
                 default :
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new ChromeDriver(options)); // ilgili threade bir driver set ettim
+                    if (isRunningOnJenkins()) {
+                        FirefoxOptions options = new FirefoxOptions();
+                        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        threadDriver.set(new FirefoxDriver(options));
+                    }
+                    else {
+                        threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
+                    }
+
+
+                    // EdgeOptions eOptions=new EdgeOptions();
+                    // eOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    //  threadDriver.set(new EdgeDriver(eOptions));
+
+
             }
         }
 
@@ -62,6 +75,11 @@ public class GWD {
 
            threadDriver.set(driver); // kendisine null olarak ver, bu hatta bir dolu driver yok
         }
+    }
+
+    public static boolean isRunningOnJenkins() {
+        String jenkinsHome = System.getenv("JENKINS_HOME");
+        return jenkinsHome != null && !jenkinsHome.isEmpty();
     }
 
 

@@ -77,6 +77,7 @@ public class GWD {
         }
     }
 
+    // jenkinsten veya intelij den calismasina gore
     public static boolean isRunningOnJenkins() {
         String jenkinsHome = System.getenv("JENKINS_HOME");
         return jenkinsHome != null && !jenkinsHome.isEmpty();
